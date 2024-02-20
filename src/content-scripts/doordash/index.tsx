@@ -1,7 +1,8 @@
 // index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NutritionDialog from './NutritionDialog';
+import NutritionLink from './NutritionLink';
+import { NuritionDialog } from '../../components/NutritionDialog';
 
 const observer = new MutationObserver((mutationsList, observer) => {
     for(let mutation of mutationsList) {
@@ -16,7 +17,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
                     link.className = 'text-blue-500 underline'; // Add Tailwind CSS classes here
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
-                        ReactDOM.render(<NutritionDialog />, document.body);
+                        ReactDOM.render(<NuritionDialog open={true} setOpen={() => {}} />, document.body);
                     });
                     if (button.parentNode) {
                         newDiv.appendChild(link);

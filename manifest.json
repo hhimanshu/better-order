@@ -6,6 +6,7 @@
   "content_scripts": [
     {
       "js": ["src/content-scripts/doordash/index.tsx"],
+      "css": ["output.css"],
       "matches": ["https://www.doordash.com/store/*"]
     }
   ]
