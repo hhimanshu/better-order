@@ -17,7 +17,10 @@ const observer = new MutationObserver((mutationsList, observer) => {
                     link.className = 'text-blue-500 underline'; // Add Tailwind CSS classes here
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
-                        ReactDOM.render(<NuritionDialog open={true} setOpen={() => {}} />, document.body);
+                        // ReactDOM.render(<NuritionDialog open={true} setOpen={() => {}} />, document.body);
+                        const root = document.createElement('div');
+                        root.id = 'root';
+                        ReactDOM.render(<NutritionLink />, root);
                     });
                     if (button.parentNode) {
                         newDiv.appendChild(link);

@@ -1,5 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 
 interface NutritionDialogProps {
@@ -7,9 +8,7 @@ interface NutritionDialogProps {
   setOpen: (open: boolean) => void;
 }
 
-export const NuritionDialog = ({open, setOpen}: NutritionDialogProps) => {
-  //const [open, setOpen] = useState(true);
-
+export const NuritionDialog = ({ open, setOpen }: NutritionDialogProps) => {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -37,6 +36,14 @@ export const NuritionDialog = ({open, setOpen}: NutritionDialogProps) => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                <div className="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
+                  <button
+                    type="button"
+                    onClick={() => setOpen(false)}
+                  >
+                    <XMarkIcon className="h-6 w-6 text-amber-300" aria-hidden="true" />
+                  </button>
+                </div>
                 <div>
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
                     <CheckIcon
