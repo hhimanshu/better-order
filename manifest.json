@@ -7,6 +7,10 @@
     {
       "js": ["src/content.tsx"],
       "matches": ["https://www.google.com/*"]
+    },
+    {
+      "js": ["src/content-scripts/doordash/index.ts"],
+      "matches": ["https://www.doordash.com/store/*"]
     }
   ]
 }
