@@ -11,8 +11,10 @@ const NutritionLink: React.FC<NutritionLinkProps> = ({
   menuItem,
   menuDescription,
 }) => {
-  const [open, setOpen] = React.useState(false);
+  const storeName = window.location.pathname.split("/")[2];
+  console.log(`storeName: ${storeName}`);
 
+  const [open, setOpen] = React.useState(false);
   const onClose = () => {
     setOpen(false);
     // Get the root element of your extension and hide it
@@ -29,6 +31,14 @@ const NutritionLink: React.FC<NutritionLinkProps> = ({
       rootElement.style.display = "block";
     }
   }, []);
+
+  useEffect(() => {
+    if(!(menuItem || menuDescription)) {
+      console.log("No menu item or menu description. Cannot find nutrition information.");
+      // we may also show a banner or something to indicate that we couldn't find nutrition information
+      return;
+    }
+  }, [menuItem, menuDescription]);
 
   return { open } ? (
     <NuritionDialog

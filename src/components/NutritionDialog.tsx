@@ -10,8 +10,7 @@ type NutritionDialogProps = NutritionLinkProps & {
 };
 
 export const NuritionDialog = ({ open, setOpen, menuItem, menuDescription }: NutritionDialogProps) => {
-  const storeName = window.location.pathname.split("/")[2];
-  console.log(`storeName: ${storeName}`);
+  
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
