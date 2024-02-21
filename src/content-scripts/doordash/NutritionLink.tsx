@@ -1,8 +1,16 @@
 import React, { useEffect } from "react";
 import { NuritionDialog } from "../../components/NutritionDialog";
 
-const rootElementId = 'bettermenu-extension-root';
-const NutritionLink: React.FC = () => {
+export type NutritionLinkProps = {
+  menuItem: string;
+  menuDescription: string;
+};
+
+const rootElementId = "bettermenu-extension-root";
+const NutritionLink: React.FC<NutritionLinkProps> = ({
+  menuItem,
+  menuDescription,
+}) => {
   const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
@@ -10,7 +18,7 @@ const NutritionLink: React.FC = () => {
     // Get the root element of your extension and hide it
     const rootElement = document.getElementById(rootElementId);
     if (rootElement) {
-      rootElement.style.display = 'none';
+      rootElement.style.display = "none";
     }
   };
 
@@ -18,11 +26,18 @@ const NutritionLink: React.FC = () => {
     setOpen(true);
     const rootElement = document.getElementById(rootElementId);
     if (rootElement) {
-      rootElement.style.display = 'block';
+      rootElement.style.display = "block";
     }
   }, []);
 
-  return { open } ? <NuritionDialog open={open} setOpen={onClose} /> : null;
+  return { open } ? (
+    <NuritionDialog
+      open={open}
+      setOpen={onClose}
+      menuItem={menuItem}
+      menuDescription={menuDescription}
+    />
+  ) : null;
 };
 
 export default NutritionLink;

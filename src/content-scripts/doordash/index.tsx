@@ -9,6 +9,16 @@ const observer = new MutationObserver((mutationsList, observer) => {
         '[data-testid="quick-add-button"]'
       );
       buttons.forEach((button) => {
+        const menuItemElement = button
+          .closest('[data-anchor-id="MenuItem"]')
+          ?.querySelector('[data-telemetry-id="storeMenuItem.title"]');
+        const menuItem = menuItemElement?.textContent || "";
+
+        const menuDescriptionElement = button
+          .closest('[data-anchor-id="MenuItem"]')
+          ?.querySelector('[data-telemetry-id="storeMenuItem.subtitle"]');
+        const menuDescription = menuDescriptionElement?.textContent || "";
+
         const newDiv = document.createElement("div");
         if (
           !button.previousSibling ||
@@ -20,10 +30,16 @@ const observer = new MutationObserver((mutationsList, observer) => {
           link.className = "text-blue-500 underline"; // Add Tailwind CSS classes here
           link.addEventListener("click", (e) => {
             e.preventDefault();
-            // ReactDOM.render(<NuritionDialog open={true} setOpen={() => {}} />, document.body);
             const root = document.createElement("div");
             root.id = "root";
-            ReactDOM.render(<NutritionLink />, root);
+
+            ReactDOM.render(
+              <NutritionLink
+                menuItem={menuItem}
+                menuDescription={menuDescription}
+              />,
+              root
+            );
           });
           if (button.parentNode) {
             newDiv.appendChild(link);
