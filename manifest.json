@@ -5,8 +5,9 @@
   "action": { "default_popup": "index.html" },
   "content_scripts": [
     {
-      "js": ["src/content.tsx"],
-      "matches": ["https://www.google.com/*"]
+      "js": ["src/content-scripts/doordash/index.tsx"],
+      "css": ["output.css"],
+      "matches": ["https://www.doordash.com/store/*"]
     }
   ]
 }
