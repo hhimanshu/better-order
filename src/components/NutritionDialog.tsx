@@ -9,8 +9,12 @@ type NutritionDialogProps = NutritionLinkProps & {
   setOpen: (open: boolean) => void;
 };
 
-export const NuritionDialog = ({ open, setOpen, menuItem, menuDescription }: NutritionDialogProps) => {
-  
+export const NuritionDialog = ({
+  open,
+  setOpen,
+  menuItem,
+  menuDescription,
+}: NutritionDialogProps) => {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -40,18 +44,12 @@ export const NuritionDialog = ({ open, setOpen, menuItem, menuDescription }: Nut
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                 <div className="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
                   <button type="button" onClick={() => setOpen(false)}>
-                    <XMarkIcon
-                      className="h-6 w-6 text-amber-300"
-                      aria-hidden="true"
-                    />
+                    <XMarkIcon className="h-6 w-6 text-amber-300" aria-hidden="true" />
                   </button>
                 </div>
                 <div>
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                    <CheckIcon
-                      className="h-6 w-6 text-green-600"
-                      aria-hidden="true"
-                    />
+                    <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
                   </div>
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title
@@ -61,9 +59,7 @@ export const NuritionDialog = ({ open, setOpen, menuItem, menuDescription }: Nut
                       {menuItem}
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500">
-                        {menuDescription}
-                      </p>
+                      <p className="text-sm text-gray-500">{menuDescription}</p>
                     </div>
                   </div>
                 </div>
