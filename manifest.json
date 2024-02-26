@@ -2,12 +2,30 @@
   "manifest_version": 3,
   "name": "BetterOrder",
   "version": "1.0.0",
-  "action": { "default_popup": "index.html" },
+  "action": {
+    "default_popup": "index.html"
+  },
   "content_scripts": [
     {
-      "js": ["src/content-scripts/doordash/index.tsx"],
-      "css": ["output.css"],
-      "matches": ["https://www.doordash.com/store/*"]
+      "js": [
+        "src/content-scripts/doordash/index.tsx"
+      ],
+      "css": [
+        "output.css"
+      ],
+      "matches": [
+        "https://www.doordash.com/store/*"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/src/assets/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ]
 }

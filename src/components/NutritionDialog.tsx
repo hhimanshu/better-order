@@ -1,8 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { CheckIcon } from "@heroicons/react/24/outline";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 import { NutritionLinkProps } from "../content-scripts/doordash/NutritionLink";
+import NutritionSurfaceUI from "./NutritionSurface";
 
 type NutritionDialogProps = NutritionLinkProps & {
   open: boolean;
@@ -12,9 +11,12 @@ type NutritionDialogProps = NutritionLinkProps & {
 export const NuritionDialog = ({
   open,
   setOpen,
-  menuItem,
-  menuDescription,
-}: NutritionDialogProps) => {
+}: // menuItem,
+// menuDescription,
+NutritionDialogProps) => {
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -41,37 +43,8 @@ export const NuritionDialog = ({
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
-                <div className="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
-                  <button type="button" onClick={() => setOpen(false)}>
-                    <XMarkIcon className="h-6 w-6 text-amber-300" aria-hidden="true" />
-                  </button>
-                </div>
-                <div>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                    <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
-                  </div>
-                  <div className="mt-3 text-center sm:mt-5">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-base font-semibold leading-6 text-gray-900"
-                    >
-                      {menuItem}
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-500">{menuDescription}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-5 sm:mt-6">
-                  <button
-                    type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    onClick={() => setOpen(false)}
-                  >
-                    Go back to dashboard
-                  </button>
-                </div>
+              <Dialog.Panel className="relative transform overflow-x-hidden overflow-y-scroll rounded-lg bg-white px-4 pb-4 pt-5 shadow-xl transition-all">
+                <NutritionSurfaceUI handleClose={handleClose} />
               </Dialog.Panel>
             </Transition.Child>
           </div>
