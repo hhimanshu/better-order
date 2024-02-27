@@ -1,0 +1,53 @@
+/* AllergensContent.css */
+
+.AllergensContent-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.AllergensContent-tabsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AllergensContent-tab {
+  cursor: pointer;
+}
+
+.AllergensContent-tab img {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 1rem;
+}
+
+.AllergensContent-description {
+  width: 100%;
+  text-align: start;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 25px;
+}
+
+.AllergensContent-contributors {
+  margin-top: 25px;
+  text-align: start;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+  padding-bottom: 20px;
+}
+
+.AllergensContent-contributors h1 {
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.AllergensContent-contributors button {
+  padding: 4px 8px;
+  background-color: #f1f5f9;
+  margin-right: 10px;
+}

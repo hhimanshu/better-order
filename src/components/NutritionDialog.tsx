@@ -2,6 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { NutritionLinkProps } from "../content-scripts/doordash/NutritionLink";
 import NutritionSurfaceUI from "./NutritionSurface";
+import "./index.css"
 
 type NutritionDialogProps = NutritionLinkProps & {
   open: boolean;
