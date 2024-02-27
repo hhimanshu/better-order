@@ -42,7 +42,7 @@ const OverviewNutrients = () => {
               {nutrient.name}
             </h1>
             <h3
-              style={{ fontSize: "48px", fontWeight: 600, lineHeight: "48px", marginTop: "10px" }}
+              style={{ fontSize: "48px", fontWeight: 600, lineHeight: "48px", marginTop: "25px" }}
             >
               {nutrient.amount}
             </h3>
@@ -51,7 +51,7 @@ const OverviewNutrients = () => {
                 fontSize: "16px",
                 fontWeight: 400,
                 lineHeight: "48px",
-                marginTop: "-2px",
+                marginTop: "-10px",
                 color: "#64748B",
               }}
             >

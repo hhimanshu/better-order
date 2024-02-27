@@ -1,5 +1,4 @@
 import { FaXmark } from "react-icons/fa6";
-import lgo from "./logo.png"
 interface HeaderProps {
   handleClose: () => void;
 }

@@ -1,3 +1,4 @@
+// import img from "../../../assets/logo.png";
 const AllergensContent = () => {
   return (
     <div>
@@ -11,6 +12,7 @@ const AllergensContent = () => {
         }}
       >
         <h1>Not Available For Now</h1>
+        {/* <img src={img} alt="logo" /> */}
       </div>
     </div>
   );

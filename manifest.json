@@ -21,7 +21,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "/src/assets/*"
+        "src/assets/logo.png"
       ],
       "matches": [
         "<all_urls>"
