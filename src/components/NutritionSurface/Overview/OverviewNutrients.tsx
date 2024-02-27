@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { nutrients } from "../data";
-// import { isMobile } from "react-device-detect";
 import useScreenSize from "../../useScreenSize";
 const OverviewNutrients = () => {
   const isMobile = useScreenSize();

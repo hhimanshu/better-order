@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import useScreenSize from "../../useScreenSize";
 
-
 interface Tab {
   name: string;
   content: string;
@@ -10,7 +9,7 @@ interface Tab {
 
 const OverviewInfo: React.FC<{ overviewInformation: Tab[] }> = ({ overviewInformation }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-    const isMobile = useScreenSize();
+  const isMobile = useScreenSize();
 
   const handleTabClick = (index: number) => {
     setActiveTabIndex(index);

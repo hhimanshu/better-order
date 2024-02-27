@@ -30,28 +30,6 @@ const NutritionSurface: React.FC<NutritionSurfaceProps> = ({ handleClose }) => {
       <Tabs tabs={tabs} onTabSelect={handleTabSelect} />
       <div className="mt-8">{tabs[selectedTabIndex].content}</div>
       <Footer />
-      <div
-        style={{
-          backgroundColor: "#F1F5F9",
-          padding: "2px 10px",
-          width: "100%",
-          bottom: 0,
-          marginTop: "15px",
-          right: 0,
-          left: 0,
-          display: "flex",
-          justifyContent: "start",
-          flexDirection: "column",
-          textAlign: "start",
-          position: "fixed",
-        }}
-      >
-        <h1 style={{ fontWeight: 500, fontSize: "12px", lineHeight: "20px" }}>Disclaimer</h1>
-        <p style={{ fontSize: "10px", marginTop: "2px", lineHeight: "15px", marginBottom: "5px" }}>
-          Nutritional values, allergens, and diet information are estimates based on the ingredients
-          listed on this website. For accurate details, contact the restaurant directly.
-        </p>
-      </div>
     </div>
   );
 };
