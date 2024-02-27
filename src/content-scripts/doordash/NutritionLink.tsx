@@ -40,6 +40,7 @@ const NutritionLink: React.FC<NutritionLinkProps> = ({
     }
   }, [menuItem, menuDescription]);
 
+  // eslint-disable-next-line no-constant-condition
   return { open } ? (
     <NuritionDialog
       open={open}

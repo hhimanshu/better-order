@@ -2,12 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import NutritionLink from "./NutritionLink";
 
-const observer = new MutationObserver((mutationsList, observer) => {
-  for (let mutation of mutationsList) {
+const observer = new MutationObserver((mutationsList) => {
+  for (const mutation of mutationsList) {
     if (mutation.addedNodes.length) {
-      const buttons = document.querySelectorAll(
-        '[data-testid="quick-add-button"]'
-      );
+      const buttons = document.querySelectorAll('[data-testid="quick-add-button"]');
       buttons.forEach((button) => {
         const menuItemElement = button
           .closest('[data-anchor-id="MenuItem"]')
@@ -20,10 +18,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
         const menuDescription = menuDescriptionElement?.textContent || "";
 
         const newDiv = document.createElement("div");
-        if (
-          !button.previousSibling ||
-          button.previousSibling.textContent !== "Nutrition"
-        ) {
+        if (!button.previousSibling || button.previousSibling.textContent !== "Nutrition") {
           const link = document.createElement("a");
           link.href = "#";
           link.textContent = "Nutrition";
@@ -34,10 +29,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
             root.id = "root";
 
             ReactDOM.render(
-              <NutritionLink
-                menuItem={menuItem}
-                menuDescription={menuDescription}
-              />,
+              <NutritionLink menuItem={menuItem} menuDescription={menuDescription} />,
               root
             );
           });
